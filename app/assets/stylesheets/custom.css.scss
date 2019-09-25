@@ -1,0 +1,36 @@
+$navbar-default-bg: #0A0300   ;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#AP{
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  color: #ffff;
+}
+#create{
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  color: #ffff;
+}
+#list{
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  color: #ffff;
+}
+.jumbotron{
+  text-align: center;
+  background-image: url('https://codetheweb.blog/assets/img/posts/css-advanced-background-images/mountains.jpg');
+  background-size: cover;
+  height: 600px;
+  color: #ffff;
+}
+.footer{
+  margin-top: 45px;
+  padding-top: 45px;
+  border-top: 1px solid #eaeaea;
+  color: #581845  ;
+}
