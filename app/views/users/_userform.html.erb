@@ -1,0 +1,32 @@
+<%if @user.errors.any?  %>
+<h3>The following errors prvented from creating an article</h3>
+<ul>
+  <% @user.errors.full_messages.each do |msg| %>
+  <li> <%=msg %> </li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @user do |j|%>
+  <p>
+    <%= j.label :username %><br>
+      <%= j.text_field :username %>
+  </p>
+  <p>
+    <%= j.label :email %><br>
+    <%= j.email_field :email %>
+  </p>
+
+  <p>
+    <%= j.label :password %><br>
+    <%= j.password_field :password %>
+  </p>
+
+  <p>
+    <%= j.submit(@user.new_record? ? "Sign Up" :"Update", class: "btn btn-primary") %>
+
+  </p>
+
+<% end %>
+
+<p> <%= link_to "back to articles listing",articles_path%></p>
