@@ -14,6 +14,9 @@
     <td><%= link_to "Edit",edit_article_path(article)%></td>
     <td><%= link_to "show",article_path(article)%></td>
     <td><%= link_to "Delete",article_path(article), method: :delete, data: {confirm: "Are u sure "} %></td>
+    <td>Created by: <%= article.user.username if article.user %></td>
+    <td>Created : <%= time_ago_in_words(article.created_at) %> ago</td>
+    <td>updated : <%= time_ago_in_words(article.updated_at) %> ago</td>
   </tr>
   <% end %>
 </table>
