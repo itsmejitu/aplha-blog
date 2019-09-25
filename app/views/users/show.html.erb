@@ -1,4 +1,5 @@
-<h1> showing user </h1>
+<h1> Welcome to <%= @user.username%>'s Page </h1>
 
 <p>username: <%= @user.username %></p>
 <p>email: <%= @user.email %></p>
+<%= render 'articles/article',object: @user.articles %>
