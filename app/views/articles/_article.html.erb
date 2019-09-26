@@ -8,11 +8,13 @@
 
   <% object.each do |article| %>
   <tr>
-    <td> <%= article.title %> </td>
+    <td> <%= link_to article.title,article_path(article)%> </td>
     <td> <%= article.description %> </td>
-    <td><%= link_to "Edit",edit_article_path(article)%></td>
-    <td><%= link_to "show",article_path(article)%></td>
-    <td><%= link_to "Delete",article_path(article), method: :delete, data: {confirm: "Are u sure "} %></td>
+    <td><% if logged_in? && current_user == article.user%></td>  # added a condition
+      <td><%= link_to "Edit",edit_article_path(article),class: "btn btn-primary"%></td>
+      <td><%= link_to "Delete",article_path(article), method: :delete, data: {confirm: "Are u sure "},class: "btn btn-primary" %></td>
+    <td><% end %></td>
+    <!-- <td><%= link_to "show",article_path(article),class: "btn btn-primary"%></td> -->
     <td>Created by: <%= article.user.username if article.user %></td>
     <td>Created : <%= time_ago_in_words(article.created_at) %> ago</td>
     <td>updated : <%= time_ago_in_words(article.updated_at) %> ago</td>

@@ -1,0 +1,21 @@
+<h1>Log In</h1>
+
+
+<%= form_for :session, url:login_path   do |j|%>
+
+  <p>
+    <%= j.label :email %><br>
+    <%= j.email_field :email %>
+  </p>
+
+  <p>
+    <%= j.label :password %><br>
+    <%= j.password_field :password %>
+  </p>
+
+  <p>
+    <%= j.submit "Log in", class: "btn btn-primary" %>
+
+  </p>
+
+<% end %>
